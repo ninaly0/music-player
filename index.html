@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Player</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="player">
+        <audio src=""></audio>
+        <button class="player_previous">
+            <img src="img/arrow_left.svg" alt="previous button">
+        </button>
+        <button class="player_next">
+            <img src="img/arrow_right.svg" alt="next button">
+        </button>
+        <figure class="player_cover">
+            <img src="" alt="cover">
+        </figure>
+
+        <div class="player_controls">
+            <div class="player_settings">
+                <button class="player_dot">
+                    <img src="img/settings.svg" alt="settings button">
+                </button>
+                <ul class="player_menu">
+                    <li>Setting 1</li>
+                    <li>Setting 2</li>
+                    <li>Setting 3</li>
+                </ul>
+            </div>
+
+            <button class="player_like">
+                <img src="img/like.svg" alt="like button">
+                <img class="player_liked" src="img/like_full.svg" alt="liked button">
+            </button>
+
+
+            <h1 class="player_name">
+                <span class="player_artist">Always Never</span>
+                <span class="player_title">Wylin'</span>
+            </h1>
+
+            <div class="player_timer">
+                <div class="player_time_value">
+                    <span class="player_currentTime">00:00</span>
+                    <span class="player_duration">00:00</span>
+                </div>
+                <div class="player_progressBar">
+                    <div class="player_progress_value"></div>
+                </div>
+            </div>
+
+            <div class="player_repeatShuffle">
+                <button class="player_repeat">
+                    <img src="img/repeat.svg" alt="repeat button">
+                </button>
+                <button class="player_shuffle">
+                    <img src="img/shuffle.svg" alt="shuffle button">
+                </button>
+            </div>
+
+            <div class="player_controller">
+                <button class="player_prev_btn">
+                    <img src="img/previous.svg" alt="previous button">
+                </button>
+                <button class="player_play_btn">
+                    <img class="playBtn" src="img/play.svg" alt="play button">
+                    <img class="pauseBtn" src="img/pause.svg" alt="pause button">
+                </button>
+
+                <button class="player_next_btn">
+                    <img src="img/next.svg" alt="next button">
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+#System and other files 
+.DS_Store
+.idea/
+*.kate-swp
+*.desktop
+*.thumb
+*.sublime*
+.vscode
+
+
+#Some logs
+logs
+*.log
+npm-debug.log*
+
+*.seed
+coverage
+.npm
+.tmp
+
+.cache
+dist
