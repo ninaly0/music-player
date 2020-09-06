@@ -85,7 +85,7 @@ settings.dot.addEventListener('click', function(){
     settings.menu.classList.toggle('is-active');
 });
 settings.like.addEventListener('click', function(){
-    settings.liked.classList.toggle('is-active');
+    this.classList.toggle('is-active');
 });
 
 
@@ -158,37 +158,47 @@ function setSong(index){
 
 function prevSong(){
     currentIndexSong--;
-    if( currentIndexSong === 0 ){
+
+    if( currentIndexSong < 0 ){
         currentIndexSong = songs.length -1
     }
     setSong(currentIndexSong);
 }
 
+// si shuffle = true, FAIRE ranmdom TANT QUE ramdom songs est 
+
 function nextSong() {
+
     if( hasShuffle ){
         do{
             var randomIndex = Math.floor(Math.random() * songs.length);
         }
-        while (randomIndex == currentIndexSong)
+        while (randomIndex === currentIndexSong)
 
         currentIndexSong = randomIndex;
 
     } else {
         currentIndexSong++;
-        if(currentIndexSong == songs.length) {
+
+        if(currentIndexSong >= songs.length) {
             currentIndexSong = 0;
         }
-        setSong(currentIndexSong);
     }
+    setSong(currentIndexSong);
 }
 
 function formatTime (timeInSeconds) {
     var minutes = Math.floor(timeInSeconds / 60 );
-    var seconds = Math.floor(timeInSeconds % 60);
+    var seconds = Math.round(timeInSeconds % 60);
+
+    if (minutes < 10) {
+        minutes = '0' + minutes;
+    }
+
     if ( seconds < 10) {
         seconds = '0' + seconds;
     }
-    return '0' + minutes + ':' + seconds;
+    return minutes + ':' + seconds;
 };
 
 
