@@ -96,13 +96,11 @@ controls.pause.addEventListener('click', function(){
 });
 audio.addEventListener('play', function(){
     controls.play.style.display = 'none';
-    controls.pause.style.display = '';
-    // controls.pause.classList.add('is-active');
+    controls.pause.classList.add('is-active');
 });
 audio.addEventListener('pause', function(){
     controls.play.style.display = '';
-    // controls.pause.classList.remove('is-active');
-    controls.pause.style.display = 'none';
+    controls.pause.classList.remove('is-active');
 })
 
 audio.addEventListener('ended', function(){
