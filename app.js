@@ -77,6 +77,7 @@ var songs = [
 var currentIndexSong = 0;
 var hasRepeat = false;
 var hasShuffle = false;
+var hasFirstDurationChange = false;
 
 setSong(currentIndexSong);
 
@@ -115,7 +116,12 @@ audio.addEventListener('ended', function(){
 //L'évènement durationchange est déclenché quand l'attribut de durée est mis à jour.
 audio.addEventListener('durationchange', function(){
     time.duration.textContent = formatTime(audio.duration);
-    this.play();
+    if(hasFirstDurationChange){
+        this.play();
+    } else {
+        hasFirstDurationChange = true;
+    }
+
 });
 
 //La position de la tête de lecture dans le média indiquée par l'attribut currentTime de l'élément a changée.
