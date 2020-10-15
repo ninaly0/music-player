@@ -86,7 +86,7 @@ settings.dot.addEventListener('click', function(){
     settings.menu.classList.toggle('is-active');
 });
 settings.like.addEventListener('click', function(){
-    this.classList.toggle('is-active');
+    settings.liked.classList.toggle('is-active');
 });
 
 controls.play.addEventListener('click', function(){
