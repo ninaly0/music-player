@@ -2,7 +2,7 @@ var audio = document.querySelector('audio');
 var artistName = document.querySelector('.player_artist');
 var title = document.querySelector('.player_title');
 var cover = document.querySelector('.player_cover img');
-
+var overlay = document.querySelector('.overlay');
 
 var time = {
     currentTime : document.querySelector('.player_currentTime'),
@@ -24,6 +24,7 @@ var controls = {
     repeat : document.querySelector('.player_repeat'),
     shuffle : document.querySelector('.player_shuffle'),
     previous : document.querySelector('.player_prev_btn'),
+    playBtn: document.querySelector('.player_play_btn'),
     play : document.querySelector('.playBtn'),
     pause : document.querySelector('.pauseBtn'),
     next : document.querySelector('.player_next_btn')
@@ -84,7 +85,16 @@ setSong(currentIndexSong);
 
 settings.dot.addEventListener('click', function(){
     settings.menu.classList.toggle('is-active');
+    overlay.classList.remove('is-hidden');
+    overlay.addEventListener('click', function(event){
+        settings.menu.classList.remove('is-active');
+    });
 });
+
+controls.playBtn.addEventListener('mouseover', function(){
+    controls.playBtn.classList.add('animate__animated', 'animate__pulse');
+})
+
 settings.like.addEventListener('click', function(){
     settings.liked.classList.toggle('is-active');
 });
@@ -135,7 +145,6 @@ time.progressBar.addEventListener('click', function(event){
     var rect = this.getBoundingClientRect();
     // event.clientX = position relative de là ou l'évènement s'est passé ( donc là où nous avons cliqué)
     var distance = event.clientX - rect.left;
-    console.log(distance);
     audio.currentTime = (distance / rect.width) * audio.duration;
 });
 
